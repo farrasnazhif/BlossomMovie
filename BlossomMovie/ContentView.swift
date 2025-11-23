@@ -15,7 +15,7 @@ struct ContentView: View {
             // parameter 2: icon
             Tab(Constants.homeString, systemImage: Constants.homeIcon){
                 // page content
-                Text(Constants.homeString)
+               HomeView()
             }
             
             Tab(Constants.upcomingString, systemImage: Constants.upcomingIcon){
