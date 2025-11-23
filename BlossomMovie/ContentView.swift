@@ -1,4 +1,4 @@
-//
+ //
 //  ContentView.swift
 //  BlossomMovie
 //
@@ -9,13 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        // navigation
+        TabView{
+            // paramater 1: key of the tab, what's the tab for (and also its the tab text)
+            // parameter 2: icon
+            Tab("Home", systemImage: "house"){
+                // page content
+                Text("Home")
+            }
+            
+            Tab("Upcoming", systemImage: "play.circle"){
+                Text("Upcoming")
+            }
+            
+            Tab("Search", systemImage: "magnifyingglass"){
+                Text("Search")
+            }
+            
+            Tab("Download", systemImage: "arrow.down.to.line"){
+                Text("Download")
+            }
         }
-        .padding()
+  
     }
 }
 
