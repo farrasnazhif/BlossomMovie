@@ -8,10 +8,10 @@
 import Foundation
 
 struct APIObject: Decodable {
-    var results: [title] = []
+    var results: [Title] = []
 }
 
-struct title: Decodable, Identifiable {
+struct Title: Decodable, Identifiable {
     var id: Int?
     var title: String?
     var name: String?

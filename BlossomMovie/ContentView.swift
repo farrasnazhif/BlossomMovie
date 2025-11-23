@@ -30,7 +30,12 @@ struct ContentView: View {
                 Text(Constants.downloadString)
             }
         }
-  
+        .onAppear {
+            if let config = APIConfig.shared {
+                print(config.tmdAPIKey)
+                print(config.tmdBaseURL)
+            }
+        }
     }
 }
 
