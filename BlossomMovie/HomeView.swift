@@ -11,30 +11,42 @@ struct HomeView: View {
     var heroTestTitle = Constants.testTitleURL
     
     var body: some View {
-        // col
-        VStack {
-            AsyncImage(url: URL(string: heroTestTitle)){image in
-                image
-                    .resizable()
-                    .scaledToFit()
-            } placeholder: {
-                ProgressView()
-            }
-            
-            // row
-            HStack {
-                Button {
+     
+        GeometryReader {geo in
+            ScrollView {
+                // col
+                // Lazy can be scrolled,the views will load when they're needed
+                LazyVStack {
+                    AsyncImage(url: URL(string: heroTestTitle)){image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .frame(width: geo.size.height, height: geo.size.height * 0.85)
                     
-                } label: {
-                    Text(Constants.playString)
-                        .ghostButton()
-                }
-                
-                Button {
+                    // row
+                    HStack {
+                        Button {
+                            
+                        } label: {
+                            Text(Constants.playString)
+                                .ghostButton()
+                        }
+                        
+                        Button {
+                            
+                        } label: {
+                            Text(Constants.downloadString)
+                                .ghostButton()
+                        }
+                    }
                     
-                } label: {
-                    Text(Constants.downloadString)
-                        .ghostButton()
+                    HorizontalListView(header: Constants.trendingMovieString)
+                    HorizontalListView(header: Constants.trendingTVString)
+                    HorizontalListView(header: Constants.topRatedMovieString)
+                    HorizontalListView(header: Constants.topRatedTVString)
                 }
             }
         }
