@@ -13,20 +13,20 @@ struct ContentView: View {
         TabView{
             // paramater 1: key of the tab, what's the tab for (and also its the tab text)
             // parameter 2: icon
-            Tab(Constants.homeString, systemImage: "house"){
+            Tab(Constants.homeString, systemImage: Constants.homeIcon){
                 // page content
                 Text(Constants.homeString)
             }
             
-            Tab(Constants.upcomingString, systemImage: "play.circle"){
+            Tab(Constants.upcomingString, systemImage: Constants.upcomingIcon){
                 Text(Constants.upcomingString)
             }
             
-            Tab(Constants.searchString, systemImage: "magnifyingglass"){
+            Tab(Constants.searchString, systemImage: Constants.searchIcon){
                 Text(Constants.searchString)
             }
             
-            Tab(Constants.downloadString, systemImage: "arrow.down.to.line"){
+            Tab(Constants.downloadString, systemImage: Constants.downloadIcon){
                 Text(Constants.downloadString)
             }
         }
